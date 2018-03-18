@@ -46,16 +46,16 @@
 # Switch the drivers
   - Create a new directory and create three files in it: `disable-nouveau.conf`, `disable-nvidia.conf`, `toggle-gpu.sh`.
   - Copy the following into each file:
-      - Copy these into disable-nouveau.conf.
+      - Copy these into `disable-nouveau.conf`.
         ``` 
         blacklist nouveau
         options nouveau modeset=0
         ```
-      - Copy this into disable-nvidia.conf
+      - Copy this into `disable-nvidia.conf`.
         ```
         blacklist nvidia
         ```
-      - Copy this into toggle-gpu.sh, don't forget to change the `<dir_path>` to the actual path.
+      - Copy this into `toggle-gpu.sh`, don't forget to change the `<dir_path>` to the actual directory path.
         ```bash
         #!/usr/bin/bash
         function to_nvidia {
@@ -76,7 +76,7 @@
             sudo cp <dir_path>/disable-nvidia.conf /usr/lib/modprobe.d/
         }
         ```
-   - Lastly add this to your .bashrc.
+   - Lastly add this to your `.bashrc`.
      ```
      source <dir_path>/toggle-gpu.sh
      ```
