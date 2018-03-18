@@ -44,3 +44,41 @@
         according to [here](https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/cuda&id=ae90e4d243510e9565e66e9e8e08c509f5719fe0)
       
 # Switch the drivers
+  - Create a new directory and create three files in it: `disable-nouveau.conf`, `disable-nvidia.conf`, `toggle-gpu.sh`.
+  - Copy the following into each file:
+      - Copy these into disable-nouveau.conf.
+        ``` 
+        blacklist nouveau
+        options nouveau modeset=0
+        ```
+      - Copy this into disable-nvidia.conf
+        ```
+        blacklist nvidia
+        ```
+      - Copy this into toggle-gpu.sh, don't forget to change the `<dir_path>` to the actual path.
+        ```bash
+        #!/usr/bin/bash
+        function to_nvidia {
+            sudo rm /etc/modprobe.d/disable-nouveau.conf -f
+            sudo rm /etc/modprobe.d/disable-nvidia.conf -f
+            sudo cp <dir_path>/disable-nouveau.conf /etc/modprobe.d/
+            sudo rm /usr/lib/modprobe.d/disable-nouveau.conf -f
+            sudo rm /usr/lib/modprobe.d/disable-nvidia.conf -f
+            sudo cp <dir_path>/disable-nouveau.conf /usr/lib/modprobe.d/
+        }
+                                                                                                                                                                                                                     
+        function to_nouveau {                                                                                                                                                                                                
+            sudo rm /etc/modprobe.d/disable-nouveau.conf -f                                                                                                                                                                  
+            sudo rm /etc/modprobe.d/disable-nvidia.conf -f                                                                                                                                                                   
+            sudo cp <dir_path>/disable-nvidia.conf /etc/modprobe.d/                                                                                                                                
+            sudo rm /usr/lib/modprobe.d/disable-nouveau.conf -f                                                                                                                                                              
+            sudo rm /usr/lib/modprobe.d/disable-nvidia.conf -f                                                                                                                                                               
+            sudo cp <dir_path>/disable-nvidia.conf /usr/lib/modprobe.d/                                                                                                                            
+        }  
+        ```
+   - Lastly add this to your .bashrc.
+     ```
+     source <dir_path>/toggle-gpu.sh
+     ```
+   - To change the kernel module, either type `to_nvidia` or `to_nouveau` in the terminal and then reboot.
+   - When using the Nvidia module, the graphic is handled by the intel GPU and Nvidia module is only used for CUDA.
