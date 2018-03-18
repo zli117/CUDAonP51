@@ -43,3 +43,4 @@
         ```
         according to [here](https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/cuda&id=ae90e4d243510e9565e66e9e8e08c509f5719fe0)
       
+# Switch the drivers
