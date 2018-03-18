@@ -66,14 +66,14 @@
             sudo rm /usr/lib/modprobe.d/disable-nvidia.conf -f
             sudo cp <dir_path>/disable-nouveau.conf /usr/lib/modprobe.d/
         }
-                                                                                                                                                                                                                     
-        function to_nouveau {                                                                                                                                                                                                
-            sudo rm /etc/modprobe.d/disable-nouveau.conf -f                                                                                                                                                                  
-            sudo rm /etc/modprobe.d/disable-nvidia.conf -f                                                                                                                                                                   
-            sudo cp <dir_path>/disable-nvidia.conf /etc/modprobe.d/                                                                                                                                
-            sudo rm /usr/lib/modprobe.d/disable-nouveau.conf -f                                                                                                                                                              
-            sudo rm /usr/lib/modprobe.d/disable-nvidia.conf -f                                                                                                                                                               
-            sudo cp <dir_path>/disable-nvidia.conf /usr/lib/modprobe.d/                                                                                                                            
+
+        function to_nouveau {
+            sudo rm /etc/modprobe.d/disable-nouveau.conf -f
+            sudo rm /etc/modprobe.d/disable-nvidia.conf -f
+            sudo cp <dir_path>/disable-nvidia.conf /etc/modprobe.d/
+            sudo rm /usr/lib/modprobe.d/disable-nouveau.conf -f
+            sudo rm /usr/lib/modprobe.d/disable-nvidia.conf -f
+            sudo cp <dir_path>/disable-nvidia.conf /usr/lib/modprobe.d/
         }
         ```
    - Lastly add this to your .bashrc.
