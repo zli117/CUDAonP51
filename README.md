@@ -1,7 +1,7 @@
-# My Goals
+# Goals
   - Setup CUDA and Tensorflow so that I can train some models with GPU accleration
   - Should be able to switch to Nouveau since I want the reverse PRIME to work so that I can use my external monitor through HDMI. (Though most of the time I don't need CUDA. So switch by rebooting is fine)
-# Environment Description
+# Environment
   - Hardware:
       - CPU: Xeon E3-1505M v6 @ 3.00GHz
       - GPU: Quadro M2200
@@ -43,7 +43,7 @@
         ```
         according to [here](https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/cuda&id=ae90e4d243510e9565e66e9e8e08c509f5719fe0)
       
-# Switch the drivers
+# Switch the modules
   - Create a new directory and create three files in it: `disable-nouveau.conf`, `disable-nvidia.conf`, `toggle-gpu.sh`.
   - Copy the following into each file:
       - Copy these into `disable-nouveau.conf`.
