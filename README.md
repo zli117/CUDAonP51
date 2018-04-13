@@ -57,16 +57,16 @@
         ```
         blacklist nvidia
         ```
-      - Copy this into `toggle-gpu.sh`, don't forget to change the `<dir_path>` to the actual directory path.
+      - Copy this into `toggle-gpu.sh`, don't forget to change the `<dir_path>` to the path of the directory you just created.
         ```bash
         #!/usr/bin/bash
         function to_nvidia {
             sudo rm /etc/modprobe.d/disable-nouveau.conf -f
             sudo rm /etc/modprobe.d/disable-nvidia.conf -f
-            sudo cp /mnt/Shared/Documents/modprobed-conf/disable-nouveau.conf /etc/modprobe.d/
+            sudo cp <dir_path>/disable-nouveau.conf /etc/modprobe.d/
             sudo rm /usr/lib/modprobe.d/disable-nouveau.conf -f
             sudo rm /usr/lib/modprobe.d/disable-nvidia.conf -f
-            sudo cp /mnt/Shared/Documents/modprobed-conf/disable-nouveau.conf /usr/lib/modprobe.d/
+            sudo cp <dir_path>/disable-nouveau.conf /usr/lib/modprobe.d/
             sudo cp /usr/lib/back-libnvidia-ml.so.390.42 /usr/lib/libnvidia-ml.so.390.42
             sudo ldconfig
         }
@@ -74,10 +74,10 @@
         function to_nouveau {
             sudo rm /etc/modprobe.d/disable-nouveau.conf -f
             sudo rm /etc/modprobe.d/disable-nvidia.conf -f
-            sudo cp /mnt/Shared/Documents/modprobed-conf/disable-nvidia.conf /etc/modprobe.d/
+            sudo cp <dir_path>/disable-nvidia.conf /etc/modprobe.d/
             sudo rm /usr/lib/modprobe.d/disable-nouveau.conf -f
             sudo rm /usr/lib/modprobe.d/disable-nvidia.conf -f
-            sudo cp /mnt/Shared/Documents/modprobed-conf/disable-nvidia.conf /usr/lib/modprobe.d/
+            sudo cp <dir_path>/disable-nvidia.conf /usr/lib/modprobe.d/
             # Important for Nouveau power management
             # Without the line below, Nouveau won't shut down the card even nothing uses it
             sudo mv /usr/lib/libnvidia-ml.so.390.42 /usr/lib/back-libnvidia-ml.so.390.42
