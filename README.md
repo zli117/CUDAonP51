@@ -27,7 +27,7 @@
         - Choose y for `Install the CUDA 9.1 Toolkit?`
         - Use default location for Toolkit Location.
         - Choose y for `Do you want to install a symbolic link at /usr/local/cuda?`
-        - Answer to other questions according to your needs.
+        - Answer to other questions accordingly.
         - After done, follow the printout instructions to add PATH and LD_LIBRARY_PATH values.
       - Then execute: `sudo ./cuda_9.1.85_387.26_linux.run --silent --driver` to install the driver.
   - Install cuDNN
