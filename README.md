@@ -23,6 +23,7 @@
       - Download the run file from [here](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Fedora&target_version=25&target_type=runfilelocal). Note that there is no official support for Arch. But the run file from other distros will work.
       - First execute: `sudo ./cuda_9.1.85_387.26_linux.run --no-opengl-libs`. 
         - When prompted with question about whether to install NVIDIA Accelerated Graphics Driver, choose no. This will install everything except CUDA driver and the OpenGL files.
+        - Choose no for `Do you want to run nvidia-xconfig?`
         - Choose y for `Install the CUDA 9.1 Toolkit?`
         - Use default location for Toolkit Location.
         - Choose y for `Do you want to install a symbolic link at /usr/local/cuda?`
