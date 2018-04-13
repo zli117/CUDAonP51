@@ -78,6 +78,8 @@
             sudo rm /usr/lib/modprobe.d/disable-nouveau.conf -f
             sudo rm /usr/lib/modprobe.d/disable-nvidia.conf -f
             sudo cp /mnt/Shared/Documents/modprobed-conf/disable-nvidia.conf /usr/lib/modprobe.d/
+            # Important for Nouveau power management
+            # Without the line below, Nouveau won't shut down the card even nothing uses it
             sudo mv /usr/lib/libnvidia-ml.so.390.42 /usr/lib/back-libnvidia-ml.so.390.42
             sudo ldconfig
         }
