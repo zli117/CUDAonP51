@@ -8,7 +8,7 @@
       - Screen: FHD w/o touch
   - Software:
       - Distro: Arch Linux
-      - Kernel: 4.15.9-1-ARCH
+      - Kernel: 4.14.33-1-lts
       - X version: 1.19.6
       - KDE Plasma 5.12.3
       - Qt: 64-bit, 5.10.1
