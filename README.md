@@ -14,6 +14,7 @@
       - Qt: 64-bit, 5.10.1
       - With Nouveau installed
 # Process
+  - Note that the actual version of the driver and CUDA Toolkit might differ. Please adapt accordingly.
   - Install Nvidia Driver:
       - Download the run file from [here](http://www.nvidia.com/download/driverResults.aspx/131853/en-us). (You may be able to find a newer version though)
       - run with `sudo ./NVIDIA-Linux-x86_64-390.42.run --no-nouveau-check --no-opengl-files`.
@@ -58,6 +59,7 @@
         blacklist nvidia
         ```
       - Copy this into `toggle-gpu.sh`, don't forget to change the `<dir_path>` to the path of the directory you just created.
+        Also `libnvidia-ml.so` might have a different suffix, so please change if it differs.
         ```bash
         #!/usr/bin/bash
         function to_nvidia {
