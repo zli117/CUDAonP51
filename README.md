@@ -16,8 +16,8 @@
 # Process
   - Install Nvidia Driver:
       - Download the run file from [here](http://www.nvidia.com/download/driverResults.aspx/131853/en-us). (You may be able to find a newer version though)
-      - run with `sudo ./NVIDIA-Linux-x86_64-390.42.run --no-opengl-files`.
-      - When asked to generate blacklist files, choose no.
+      - run with `sudo ./NVIDIA-Linux-x86_64-390.42.run --no-nouveau-check --no-opengl-files`.
+      - When asked to generate blacklist files, choose no (no need if you have the `--no-nouveau-check` flag set).
       - We can't use the nvidia driver from the repository, since that will install the nvidia OpenGL files which will mess up Nouveau.
   - Install CUDA Toolkit and CUDA driver:
       - Download the run file from [here](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Fedora&target_version=25&target_type=runfilelocal). Note that there is no official support for Arch. But the run file from other distros will work.
