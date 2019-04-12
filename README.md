@@ -1,3 +1,5 @@
+**NOTE: Deprecated. Use [optimus-manager](https://github.com/Askannz/optimus-manager) instead.**
+
 # Goals
   - Setup CUDA and Tensorflow so that I can train some models with GPU accleration
   - Should be able to switch to Nouveau since I want the reverse PRIME to work so that I can use my external monitor through HDMI. (Though most of the time I don't need CUDA. So switch by rebooting is fine)
